@@ -15,18 +15,18 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Lead Systems Studio | Websites for Local Service Businesses",
   description:
-    "Lead-ready websites, request flows, tracking, customer bases, and ads setup for HVAC and home service companies.",
+    "Sales-focused websites, customer request paths, and advertising foundations for HVAC and home service companies.",
   openGraph: {
     title: "Lead Systems Studio",
     description:
-      "Websites that turn local traffic into booked jobs for HVAC and home service companies.",
+      "Websites that help local service businesses turn traffic into booked jobs.",
     images: ["/og.png"],
   },
   twitter: {
     card: "summary_large_image",
     title: "Lead Systems Studio",
     description:
-      "Websites that turn local traffic into booked jobs for HVAC and home service companies.",
+      "Websites that help local service businesses turn traffic into booked jobs.",
     images: ["/og.png"],
   },
   icons: {

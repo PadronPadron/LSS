@@ -1,65 +1,85 @@
+import { AuditForm } from "./AuditForm";
+
 const services = [
   {
-    title: "Conversion website",
-    text: "A fast, mobile-first site with service pages, clear calls to action, and no dead-end traffic.",
+    title: "Website that sells",
+    text: "A fast, mobile-first site that makes it easy for customers to call, request service, and trust the business.",
   },
   {
-    title: "Lead capture system",
-    text: "Forms, thank-you page logic, Telegram or email notifications, and a customer base your team can use.",
+    title: "Request flow",
+    text: "A simple path from visitor to real request, with instant owner alerts and every inquiry saved for follow-up.",
   },
   {
-    title: "Ads-ready tracking",
-    text: "Meta and Google structure, conversion events, campaign landing pages, and clean reporting foundations.",
+    title: "Ready for ads",
+    text: "Pages and request steps prepared before ad spend, so paid traffic has somewhere strong to land.",
   },
   {
-    title: "Local SEO pages",
-    text: "City and service pages built around how local customers actually search for contractors.",
+    title: "Service and city pages",
+    text: "Dedicated pages for the work you do and the areas you serve, written for local customers who are ready to hire.",
   },
 ];
 
 const packages = [
   {
     name: "Website Rescue",
-    price: "$1,500-$2,500",
+    price: "from $2,500",
     description: "For old sites that look dated, load slowly, or fail to turn mobile visitors into calls.",
-    features: ["1-5 core pages", "Mobile CTA cleanup", "Lead form", "Basic SEO", "Domain connection"],
+    features: ["1-5 core pages", "Mobile call buttons", "Request form", "Search basics", "Domain connection"],
   },
   {
-    name: "Lead System",
-    price: "$3,500-$6,000",
-    description: "The main setup for local service businesses that want a real request pipeline.",
+    name: "Request System",
+    price: "from $4,500",
+    description: "The main setup for local service businesses that want more requests and cleaner follow-up.",
     features: [
       "Website rebuild",
-      "SEO service pages",
-      "Thank-you page",
-      "Telegram/email leads",
-      "Simple client database",
-      "Ad tracking structure",
+      "Service pages",
+      "After-request step",
+      "Instant owner alerts",
+      "Simple client list",
+      "Request source clarity",
     ],
     highlighted: true,
   },
   {
     name: "Growth Setup",
-    price: "$7,500-$12,000",
-    description: "A complete growth foundation for businesses ready to launch ads and local SEO together.",
+    price: "from $8,500",
+    description: "A complete growth foundation for businesses ready to improve search presence and launch ads.",
     features: [
-      "Full lead website",
-      "Local SEO pages",
-      "CRM/admin view",
-      "Meta Ads setup",
+      "Full request-ready website",
+      "Local service pages",
+      "Simple owner view",
+      "Ad launch setup",
       "Creative direction",
       "First month support",
     ],
   },
 ];
 
+const cases = [
+  {
+    name: "Home Service Website",
+    type: "Contractor request system",
+    text: "A focused site that turns service-area traffic into calls, online requests, and clear follow-up.",
+  },
+  {
+    name: "Website Rescue",
+    type: "Local contractor rebuild",
+    text: "Old-site replacement with stronger mobile calls, clearer services, and a smoother request path.",
+  },
+  {
+    name: "Growth Website",
+    type: "Advertising-ready site",
+    text: "A site prepared for paid traffic, with service pages, customer requests, and follow-up in one place.",
+  },
+];
+
 const auditChecks = [
-  "Mobile CTA clarity",
-  "Lead form friction",
-  "Tracking gaps",
-  "Service-area SEO",
-  "Thank-you page logic",
-  "Ads-readiness",
+  "Mobile call clarity",
+  "Request friction",
+  "Lost inquiry points",
+  "Service-area gaps",
+  "Follow-up flow",
+  "Ad readiness",
 ];
 
 export default function Home() {
@@ -67,13 +87,17 @@ export default function Home() {
     <main>
       <nav className="topbar" aria-label="Primary navigation">
         <a className="brand" href="#top" aria-label="Lead Systems Studio home">
-          <span className="brand-mark">LS</span>
+          <span className="brand-mark" aria-hidden="true">
+            <span>L</span>
+            <span>S</span>
+            <span>S</span>
+          </span>
           <span>Lead Systems Studio</span>
         </a>
         <div className="nav-links">
-          <a href="#services">Services</a>
-          <a href="#apex">Apex case</a>
-          <a href="#packages">Packages</a>
+          <a className="nav-button" href="#services">Services</a>
+          <a className="nav-button" href="#cases">Cases</a>
+          <a className="nav-button" href="#packages">Packages</a>
           <a className="nav-cta" href="#audit">
             Free audit
           </a>
@@ -85,30 +109,30 @@ export default function Home() {
           <p className="eyebrow">For HVAC and home service companies</p>
           <h1>Websites that turn local traffic into booked jobs.</h1>
           <p className="hero-copy">
-            We build the full lead system: site, forms, tracking, thank-you page,
-            notifications, customer base, and ad-ready structure for contractors.
+            We build websites that help local businesses look stronger, capture
+            more requests, follow up faster, and turn ad traffic into real jobs.
           </p>
           <div className="hero-actions" aria-label="Primary actions">
             <a className="button primary" href="#audit">
               Get free audit
             </a>
-            <a className="button secondary" href="#apex">
-              See Apex case
+            <a className="button secondary" href="#cases">
+              See cases
             </a>
           </div>
           <div className="hero-proof" aria-label="Key capabilities">
             <span>Site</span>
             <span>Leads</span>
-            <span>Tracking</span>
-            <span>CRM</span>
+            <span>Calls</span>
+            <span>Clients</span>
             <span>Ads</span>
           </div>
         </div>
 
-        <div className="pipeline-panel" aria-label="Lead system preview">
+        <div className="pipeline-panel" aria-label="Customer request preview">
           <div className="panel-header">
-            <span>Lead operating system</span>
-            <strong>Live flow</strong>
+            <span>Customer request flow</span>
+            <strong>Always on</strong>
           </div>
           <div className="pipeline">
             <div className="pipeline-step">
@@ -119,16 +143,16 @@ export default function Home() {
             <div className="pipeline-step">
               <span className="step-number">02</span>
               <strong>Website request</strong>
-              <p>Clear CTA, short form, fast mobile experience.</p>
+              <p>Clear call buttons, short request form, fast mobile experience.</p>
             </div>
             <div className="pipeline-step">
               <span className="step-number">03</span>
-              <strong>Instant notification</strong>
+              <strong>Instant alert</strong>
               <p>Telegram or email alert goes to the owner or dispatcher.</p>
             </div>
             <div className="pipeline-step">
               <span className="step-number">04</span>
-              <strong>Customer base</strong>
+              <strong>Client list</strong>
               <p>Every request is stored for follow-up and reporting.</p>
             </div>
           </div>
@@ -147,7 +171,7 @@ export default function Home() {
       <section className="section" id="services">
         <div className="section-heading">
           <p className="eyebrow">What we build</p>
-          <h2>Not just a prettier website. A system that catches demand.</h2>
+          <h2>Not just a prettier website. A better way to win jobs.</h2>
         </div>
         <div className="service-grid">
           {services.map((service) => (
@@ -160,58 +184,45 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="case-section" id="apex">
+      <section className="case-section" id="cases">
         <div className="case-copy">
-          <p className="eyebrow">First packaged case</p>
-          <h2>Apex: from contractor website to lead system.</h2>
+          <p className="eyebrow">Selected cases</p>
+          <h2>Sites built to win jobs, not sit online quietly.</h2>
           <p>
-            Apex is packaged as the proof of work for local service businesses:
-            a focused site structure, request flow, lead notifications, simple
-            database, SEO pages, thank-you page, and campaign-ready tracking.
+            The case section is built to show practical before-and-after work:
+            sharper websites, clearer services, easier requests, and a business
+            owner who can see where new jobs are coming from.
           </p>
           <div className="case-stats">
             <div>
               <strong>6</strong>
-              <span>core conversion assets</span>
+              <span>core pages and request steps</span>
             </div>
             <div>
               <strong>24/7</strong>
-              <span>lead intake foundation</span>
+              <span>request intake foundation</span>
             </div>
             <div>
               <strong>1</strong>
-              <span>clean owner dashboard</span>
+              <span>simple owner view</span>
             </div>
           </div>
         </div>
-        <div className="case-board" aria-label="Apex system components">
-          <div className="board-row active">
-            <span>Website</span>
-            <strong>Service pages + mobile CTA</strong>
-          </div>
-          <div className="board-row">
-            <span>Requests</span>
-            <strong>Form + thank-you page</strong>
-          </div>
-          <div className="board-row">
-            <span>Alerts</span>
-            <strong>Telegram/email handoff</strong>
-          </div>
-          <div className="board-row">
-            <span>Database</span>
-            <strong>Every lead stored</strong>
-          </div>
-          <div className="board-row">
-            <span>Growth</span>
-            <strong>Meta/Google-ready tracking</strong>
-          </div>
+        <div className="case-board" aria-label="Case previews">
+          {cases.map((item, index) => (
+            <article className={index === 0 ? "case-item active" : "case-item"} key={item.name}>
+              <span>{item.type}</span>
+              <strong>{item.name}</strong>
+              <p>{item.text}</p>
+            </article>
+          ))}
         </div>
       </section>
 
       <section className="section packages-section" id="packages">
         <div className="section-heading compact">
           <p className="eyebrow">Packages</p>
-          <h2>Start with the right level of lead infrastructure.</h2>
+          <h2>Start with the right setup for getting more requests.</h2>
         </div>
         <div className="package-grid">
           {packages.map((item) => (
@@ -233,7 +244,7 @@ export default function Home() {
           ))}
         </div>
         <div className="retainer-note">
-          <span>Monthly ads management starts at $750-$1,500/month.</span>
+          <span>Monthly advertising management starts at $1,500/month.</span>
           <strong>Ad budget is separate.</strong>
         </div>
       </section>
@@ -247,43 +258,35 @@ export default function Home() {
         <div>
           <span>02</span>
           <strong>Build</strong>
-          <p>Create the website and conversion flow.</p>
+          <p>Create the website and request path.</p>
         </div>
         <div>
           <span>03</span>
           <strong>Connect</strong>
-          <p>Wire notifications, database, and tracking.</p>
+          <p>Connect alerts, client list, and follow-up.</p>
         </div>
         <div>
           <span>04</span>
           <strong>Launch</strong>
-          <p>Send traffic into a system that can measure leads.</p>
+          <p>Send traffic to a site ready to turn interest into jobs.</p>
         </div>
       </section>
 
       <section className="audit-section" id="audit">
         <div className="audit-copy">
           <p className="eyebrow">Free website audit</p>
-          <h2>Send your site. We will show where leads are leaking.</h2>
+          <h2>Send your site. We will show where requests are leaking.</h2>
           <p>
             Best fit: HVAC, plumbing, electricians, remodelers, roofing companies,
             and local contractors with an active service area.
           </p>
-          <a
-            className="button primary"
-            href="mailto:strategy@leadsystemstudio.com?subject=Free%20website%20audit&body=Website%3A%0AService%20area%3A%0AMain%20service%3A%0AWhat%20you%20want%20to%20improve%3A"
-          >
-            Request audit
-          </a>
-        </div>
-        <div className="audit-card" aria-label="Audit checklist">
-          <h3>Audit snapshot</h3>
           <div className="audit-list">
             {auditChecks.map((check) => (
               <span key={check}>{check}</span>
             ))}
           </div>
         </div>
+        <AuditForm />
       </section>
     </main>
   );
